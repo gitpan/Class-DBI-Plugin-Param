@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub import {
     my $class = shift;
@@ -32,7 +32,7 @@ Class::DBI::Plugin::Param - Adding param() method to your CDBI object.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 
@@ -52,8 +52,7 @@ Just use this module in your subclass of CDBI.
     ...
 
     # in your script
-    my $item = MyApp::
-    $music = MyApp::Music->retrieve($id);
+    my $music = MyApp::Music->retrieve($id);
     print $music->param('title');
     $music->param(title => 'Waltz For Debby');
 
@@ -77,6 +76,7 @@ L<HTML::Template> like this:
     my $output = $fif->fill(
         scalarref => \$html,
         fobject => $music
+    );
 
     # OR
     [% USE FillInForm %]
